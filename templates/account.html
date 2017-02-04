@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Account</title>
+</head>
+
+<body>
+    {{ template "nav" .}}
+    <h1>This is the account page for {{.User.Email}}</h1>
+    <ul>
+        <li>{{.Session.SessionID}}</li>
+        <li>{{.Session.UserID}}</li>
+        <li>{{.Session.Time}}</li>
+    </ul>
+</body>
+
+</html>

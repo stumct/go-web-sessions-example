@@ -1,0 +1,9 @@
+    {{define "nav"}}
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
+        {{if .IsLoggedIn}}<li><a href="/account">Account</a></li>{{end}}
+        {{if .IsLoggedIn}}<li><a href="/logout">Logout</a></li>{{end}}
+    </ul>
+    {{end}}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+    {{ template "nav" .}}
+    {{if .Error}}
+    <h2>{{.Error}}</h2>
+    {{end}}
+    <form method="POST">
+        <input name="email" placeholder="email address" id="email" /><br />
+        <input name="password" placeholder="Password" id="password" /><br />
+        <button type="submit">Login</button><br />
+    </form>
+</body>
+
+</html>

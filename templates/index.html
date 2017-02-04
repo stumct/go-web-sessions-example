@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+    {{ template "nav" .}}
+    {{if .IsLoggedIn}}
+    <h2>Welcome {{.User.FirstName}} {{.User.LastName}}</h2>
+    {{else}}
+    <h2>Welcome. Please Login or Singup</h2>    
+    {{end}}
+</body>
+
+</html>

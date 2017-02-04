@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup</title>
+</head>
+
+<body>
+    {{ template "nav" .}}
+    {{if .Error}}
+    <h2>{{.Error}}</h2>
+    {{end}}
+    <form method="POST">
+        <input name="email" placeholder="email address" id="email" /><br />
+        <input name="firstName" placeholder="First Name" id="firstName" /><br />
+        <input name="lastName" placeholder="Last Name" id="lastName" /><br />
+        <input name="password" placeholder="Password" id="password" /><br />
+        <input name="confirmPassword" placeholder="Confirm Password" id="confirmPassword" /><br />
+        <button type="submit">Signup</button><br />
+    </form>
+</body>
+
+</html>
