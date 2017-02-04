@@ -43,7 +43,7 @@ func (db *UsersDB) Add(email string, firstName string, lastName string, password
 		Email:     email,
 		FirstName: firstName,
 		LastName:  lastName,
-		password:  pass,
+		Password:  pass,
 	}
 	db.users[u.UserID] = u
 
@@ -57,7 +57,7 @@ func (db *UsersDB) Login(email string, password string) (*User, error) {
 	for _, u := range db.users {
 		if u.Email == email {
 			// Compare the supplied password to the stored hash.
-			err := bcrypt.CompareHashAndPassword(u.password, []byte(password))
+			err := bcrypt.CompareHashAndPassword(u.Password, []byte(password))
 			if err != nil {
 				return nil, ErrorIncorrectCredentials{}
 			}
@@ -84,7 +84,7 @@ type User struct {
 	Email     string
 	FirstName string
 	LastName  string
-	password  []byte
+	Password  []byte
 }
 
 type ErrorIncorrectCredentials struct {

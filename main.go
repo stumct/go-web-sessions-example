@@ -145,8 +145,10 @@ func login(w http.ResponseWriter, r *http.Request) {
 		u, err := usersDB.Login(e, p)
 		if err != nil {
 			tpl.ExecuteTemplate(w, "login.html", struct {
-				Error string
+				IsLoggedIn bool
+				Error      string
 			}{
+				false,
 				err.Error(),
 			})
 			return
